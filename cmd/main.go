@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/icrxz/grpc-go/internal"
+)
 
 func main() {
-	fmt.Println("Hello world!!")
+	if err := internal.Run(); err != nil {
+		fmt.Println(err)
+		panic(err)
+	}
 }
